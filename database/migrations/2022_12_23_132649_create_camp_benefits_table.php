@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('camp_benefits', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('camp_id')->unsigned();
+            // $table->unsignedBigInteger('camp_id');
             $table->string('name');
             $table->timestamps();
 
             // Make a Foreign key (nama field),(tujuan),(nama table tujuan)
             // $table->foreign('camp_id')->references('id')->on('camps')->onDelete('cascade');
             //2nd method dengan syarat (nama table_namafield)
-            $table->foreignId('camps_id')->constrained();
+            $table->foreignId('camp_id')->constrained();
         });
     }
 
